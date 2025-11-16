@@ -51,6 +51,7 @@ button{
 }
 @media screen and (max-width: 800px) {
   .container{
+    margin-top:30px;
     grid-template-columns:repeat(3,20vw);
     grid-template-rows:repeat(3,20vw);
 
@@ -60,4 +61,5 @@ button{
     flex-wrap:wrap;
   }
 }
+
 
