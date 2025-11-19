@@ -2,6 +2,7 @@ var gameisrunning=true;
 var turn="X";
 var xOry;
  var xOry=document.querySelector("h2");
+ var box;
 //change Turn
 function changeTurn(){
     turn=="X"?turn="O":turn="X";
@@ -34,6 +35,7 @@ Array.from(boxes).forEach(element=>{
 //logic
 function checkWin(){
     var boxestext=document.getElementsByClassName("boxtext");
+    box=document.getElementsByClassName("box");
     var win=[
         [0,1,2],
         [3,4,5],
@@ -48,6 +50,11 @@ function checkWin(){
     win.forEach(p=>{
         if(boxestext[p[0]].innerHTML==boxestext[p[1]].innerHTML && boxestext[p[1]].innerHTML==boxestext[p[2]].innerHTML && boxestext[p[2]].innerHTML!=""){
             xOry.innerHTML=boxestext[p[0]].innerHTML+" Wonn";
+
+            box[p[0]].classList.add("line");
+            box[p[1]].classList.add("line");
+            box[p[2]].classList.add("line");
+
             gameisrunning=false;
         }
     })
@@ -64,5 +71,12 @@ document.querySelector("button").addEventListener("click",
          xOry.innerHTML="Turn Of "+turn;
         })
         gameisrunning=true;
+        
+        Array.from(box).forEach(function(rev){
+         rev.classList.remove("line");
+        }
+        
+        )
+       
     }
 )
