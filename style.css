@@ -37,6 +37,9 @@ button{
     padding:5px 10px;
     font-size:20px;
 }
+.line{
+    background-color: rgb(226, 247, 255);
+}
 .box.bt-t{
  border-top:0px;
 }
@@ -51,9 +54,9 @@ button{
 }
 @media screen and (max-width: 800px) {
   .container{
-    margin-top:30px;
     grid-template-columns:repeat(3,20vw);
     grid-template-rows:repeat(3,20vw);
+    margin-top:30px;
 
   }
   .gamecontainer{
@@ -61,5 +64,4 @@ button{
     flex-wrap:wrap;
   }
 }
-
 
